@@ -1,0 +1,43 @@
+Hi Guys This is simple tutorial for setting your own remote git repository in cpanel 
+---------------------------------------------------------------------------------------------
+
+Prerequisite : You should have basic understating of git , if you know how to commit , that much is fine :)
+
+
+
+Although your case could be different , in our case default server port was set to 2200 , so we will follow along with that 
+
+1. first of all, to create a git repo on server we should have knowledge of terminal and our hosting account should be accessible from terminal . To connect to our hosting account via terminal we use ssh command . i.e 
+
+ssh username@abc.com , and then we are asked for our account password . 
+
+2. After connecting to server successfully we use the command to create empty git repository on the server with the command 
+
+	git init bare 
+
+3. to clone our repository on our local linux machine we would use the command 
+
+	git clone ssh://username@abc.com:portnumber/home/username/public_html/path/to/your/git_repository/developerRitesh.git
+
+note: developerRitesh here refers to the empty repository that we created in 2nd step
+
+4. after cloning our repository on local server 
+	
+	we could use git status 
+	git commit 
+	git add 
+	git diff 
+
+	and can add the changes to the site and push it again on live server
+
+5. Uploading changes to remote repo 
+
+	git remote add origin ssh://username@abc.com:2200/home/username/public_html/git_repository/developerRitesh.git
+	git push -u origin master
+
+	note : please use git diff before uploading your work to server , as another developer might be some commits ahead on you , which you would not be aware of. 
+
+
+Well thats it 	
+
+
